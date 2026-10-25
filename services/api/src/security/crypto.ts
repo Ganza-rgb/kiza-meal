@@ -82,4 +82,12 @@ export function ed25519PublicKey(rawBase64Url: string): KeyObject {
   return createPublicKey({ key: { kty: 'OKP', crv: 'Ed25519', x: raw.toString('base64url') }, format: 'jwk' });
 }
 
-export function verifyEd2551
+export function verifyEd25519(publicKey: KeyObject, message: string, signatureB64Url: string): boolean {
+  const sig = Buffer.from(signatureB64Url, 'base64url');
+  if (sig.length !== 64) return false;
+  try {
+    return verify(null, Buffer.from(message, 'utf8'), publicKey, sig);
+  } catch {
+    return false;
+  }
+}

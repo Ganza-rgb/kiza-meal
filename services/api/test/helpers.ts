@@ -160,4 +160,5 @@ export function scanAt(w: TestWorld, buffetIndex: number, qr: string, key: strin
 }
 
 export function countClaims(w: TestWorld, studentId: string): number {
-  return (w.ctx.db.prepare(`SELECT COUNT(*) AS n FROM claims WHERE student_id = ? AND status = 'confirmed'`).get
+  return (w.ctx.db.prepare(`SELECT COUNT(*) AS n FROM claims WHERE student_id = ? AND status = 'confirmed'`).get(studentId) as { n: number }).n;
+}

@@ -1,0 +1,17 @@
+node_modules/
+# Local operating data — student records, photos, backups, dev credentials. Never commit.
+services/api/data/
+services/api/backups/
+**/.env
+!**/.env.example
+*.db
+*.db-wal
+*.db-shm
+# Expo
+apps/mobile/.expo/
+apps/mobile/dist/
+apps/mobile/web-build/
+apps/mobile/android/
+apps/mobile/ios/
+*.log
+.DS_Store
