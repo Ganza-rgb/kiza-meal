@@ -1,0 +1,29 @@
+{
+  "name": "@kiza/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts",
+    "setup": "tsx src/cli/setup.ts",
+    "seed:dev": "tsx src/cli/seed-dev.ts",
+    "backup": "tsx src/cli/backup.ts",
+    "restore": "tsx src/cli/restore.ts",
+    "test": "tsx --test --test-concurrency=1 \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@fastify/rate-limit": "^11.2.1",
+    "@kiza/shared": "0.1.0",
+    "fastify": "^5.12.7",
+    "qrcode": "^1.5.4",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/qrcode": "^1.5.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

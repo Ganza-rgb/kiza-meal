@@ -1,0 +1,24 @@
+{
+  "name": "kiza",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Kiza — prepaid student meal (igifu) management for Huye",
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "api:dev": "npm run dev -w @kiza/api",
+    "api:start": "npm run start -w @kiza/api",
+    "api:test": "npm run test -w @kiza/api",
+    "api:setup": "npm run setup -w @kiza/api --",
+    "api:seed:dev": "npm run seed:dev -w @kiza/api",
+    "api:backup": "npm run backup -w @kiza/api",
+    "typecheck": "npm run typecheck -w @kiza/shared && npm run typecheck -w @kiza/api && npm run typecheck --prefix apps/mobile",
+    "test": "npm run test -w @kiza/api",
+    "mobile": "npm run start --prefix apps/mobile"
+  }
+}
